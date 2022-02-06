@@ -8,8 +8,7 @@ def fiboplot():
     b = 1
     square_a = a
     square_b = b
-
-    # Setting the colour of the plotting pen to blue
+    
     x.pencolor("blue")
 
     # Drawing the first square
@@ -45,7 +44,6 @@ def fiboplot():
     x.seth(0)
     x.pendown()
 
-    # Setting the colour of the plotting pen to red
     x.pencolor("red")
 
     # Fibonacci Spiral Plot
