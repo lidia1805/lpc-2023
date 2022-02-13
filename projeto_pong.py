@@ -1,13 +1,14 @@
 import turtle
-import pygame
+import winsound
 
-pygame.mixer.init()
-pygame.mixer.music.set_volume(0.2)
-musica_fundo = pygame.mixer.music.load('Piano.mp3')
-pygame.mixer.music.play(-1)
 
-collision = pygame.mixer.Sound('smw_kick.wav')
-wrong_move = pygame.mixer.Sound('smw_thunder.wav')
+def play():
+    winsound.PlaySound('smw_kick.wav', winsound.SND_ASYNC)
+
+
+def collision():
+    winsound.PlaySound('smw_thunder.wav', winsound.SND_ASYNC)
+
 
 screen = turtle.Screen()
 screen.title("My Pong")
@@ -33,7 +34,7 @@ paddle_2.goto(350, 0)
 
 ball = turtle.Turtle()
 ball.speed(0)
-ball.shape("square")
+ball.shape("circle")
 ball.color("white")
 ball.penup()
 ball.goto(0, 0)
@@ -104,22 +105,22 @@ while True:
     if ball.ycor() > 290:
         ball.sety(290)
         ball.dy *= -1
-        wrong_move.play()
+        play()
 
     if ball.ycor() < -290:
         ball.sety(-290)
         ball.dy *= -1
-        wrong_move.play()
+        play()
 
-    if ball.xcor() < -330 and paddle_1.ycor() + 50 >\
+    if ball.xcor() < -330 and paddle_1.ycor() + 50 > \
             ball.ycor() > paddle_1.ycor() - 50:
         ball.dx *= -1
-        collision.play()
+        collision()
 
-    if ball.xcor() > 330 and paddle_2.ycor() + 50 >\
+    if ball.xcor() > 330 and paddle_2.ycor() + 50 > \
             ball.ycor() > paddle_2.ycor() - 50:
         ball.dx *= -1
-        collision.play()
+        collision()
 
     if ball.xcor() < -390:
         score_2 += 1
@@ -128,7 +129,7 @@ while True:
                   align="center", font=("Press Start 2P", 24, "normal"))
         ball.goto(0, 0)
         ball.dx *= -1
-        wrong_move.play()
+        play()
 
     if ball.xcor() > 390:
         score_1 += 1
@@ -137,4 +138,4 @@ while True:
                   align="center", font=("Press Start 2P", 24, "normal"))
         ball.goto(0, 0)
         ball.dx *= -1
-        wrong_move.play()
+        play()
