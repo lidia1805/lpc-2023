@@ -49,7 +49,7 @@ hud.color("white")
 hud.penup()
 hud.hideturtle()
 hud.goto(0, 260)
-hud.write("0 : 0", align="center", font=("Press Start 2P", 24, "normal"))
+hud.write("Player 1: 0  Player 2: 0", align="center", font=("Press Start 2P", 24, "normal"))
 
 
 def paddle_1_up():
@@ -113,12 +113,12 @@ while True:
         ball.dy *= -1
         play()
 
-    if ball.xcor() < -340 and paddle_1.ycor() + 40 > \
+    if (ball.xcor() < -340 and ball.xcor() > -350) and paddle_1.ycor() + 40 > \
             ball.ycor() > paddle_1.ycor() - 40:
         ball.dx *= -1
         collision()
 
-    if ball.xcor() > 340 and paddle_2.ycor() + 40 > \
+    if (ball.xcor() > 340 and ball.xcor() < 350) and paddle_2.ycor() + 40 > \
             ball.ycor() > paddle_2.ycor() - 40:
         ball.dx *= -1
         collision()
@@ -126,7 +126,7 @@ while True:
     if ball.xcor() < -390:
         score_2 += 1
         hud.clear()
-        hud.write("{} : {}".format(score_1, score_2),
+        hud.write("Player 1: {}  Player 2: {}".format(score_1, score_2),
                   align="center", font=("Press Start 2P", 24, "normal"))
         ball.goto(0, 0)
         ball.dx *= -1
@@ -135,7 +135,7 @@ while True:
     if ball.xcor() > 390:
         score_1 += 1
         hud.clear()
-        hud.write("{} : {}".format(score_1, score_2),
+        hud.write("Player 1: {}  Player 2: {}".format(score_1, score_2),
                   align="center", font=("Press Start 2P", 24, "normal"))
         ball.goto(0, 0)
         ball.dx *= -1
