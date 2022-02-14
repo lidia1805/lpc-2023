@@ -40,8 +40,8 @@ ball.shape("circle")
 ball.color("white")
 ball.penup()
 ball.goto(0, 0)
-ball.dx = 1
-ball.dy = 1
+ball.dx = 0.3
+ball.dy = 0.3
 
 hud = turtle.Turtle()
 hud.speed(0)
