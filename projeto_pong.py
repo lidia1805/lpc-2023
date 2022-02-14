@@ -117,13 +117,11 @@ while True:
             ball.ycor() > paddle_1.ycor() - 40:
         ball.dx *= -1
         collision()
-        pen.write("Player 1: {}  Player 2: {}".format(score_1, score_2), align ="center", font=("Courier", 24, "normal"))
 
     if ball.xcor() > 340 and paddle_2.ycor() + 40 > \
             ball.ycor() > paddle_2.ycor() - 40:
         ball.dx *= -1
         collision()
-        pen.write("Player 1: {}  Player 2: {}".format(score_1, score_2), align ="center", font=("Courier", 24, "normal")
                   
     if ball.xcor() < -390:
         score_2 += 1
