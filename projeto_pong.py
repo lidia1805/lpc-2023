@@ -1,6 +1,7 @@
 import turtle
 import winsound
 
+winsound.PlaySound('wind1.wav', winsound.SND_ASYNC)
 
 def play():
     winsound.PlaySound('smw_kick.wav', winsound.SND_ASYNC)
