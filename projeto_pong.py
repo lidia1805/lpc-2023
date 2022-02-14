@@ -49,7 +49,7 @@ hud.color("red")
 hud.penup()
 hud.hideturtle()
 hud.goto(0, 260)
-hud.write("Player 0 : Player 0", align="center", font=("Press Start 2P", 24, "normal"))
+hud.write("Player 1: 0  Player 2: 0", align="center", font=("Press Start 2P", 24, "normal"))
 
 
 
@@ -114,12 +114,12 @@ while True:
         ball.sety(-290)
         ball.dy *= -1
 
-    if ball.xcor() < -330 and paddle_1.ycor() + 50 > \
+    if (ball.xcor() < -340 and ball.xcor() > -350) and paddle_1.ycor() + 50 > \
             ball.ycor() > paddle_1.ycor() - 50:
         ball.dx *= -1
         collision()
 
-    if ball.xcor() > 330 and paddle_2.ycor() + 50 > \
+    if (ball.xcor() > 340 and ball.xcor() < 350) and paddle_2.ycor() + 50 > \
             ball.ycor() > paddle_2.ycor() - 50:
         ball.dx *= -1
         collision()
