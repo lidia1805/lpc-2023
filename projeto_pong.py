@@ -3,6 +3,7 @@ import winsound
 
 winsound.PlaySound('wind1.wav', winsound.SND_ASYNC)
 
+
 def play():
     winsound.PlaySound('smw_kick.wav', winsound.SND_ASYNC)
 
@@ -49,8 +50,8 @@ hud.color("red")
 hud.penup()
 hud.hideturtle()
 hud.goto(0, 260)
-hud.write("Player 1: 0  Player2: 0", align="center", font=("Press Start 2P", 24, "normal"))
-
+hud.write("Player 1: 0  Player2: 0",
+          align="center", font=("Press Start 2P", 24, "normal"))
 
 
 def paddle_1_up():
