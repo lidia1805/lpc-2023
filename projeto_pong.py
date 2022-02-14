@@ -41,6 +41,14 @@ ball.goto(0, 0)
 ball.dx = 1
 ball.dy = 1
 
+pen = tutle.Turtle()
+pen.speed(0)
+pen.color("white")
+pen.penup()
+pen.hideturtle()
+pen.goto(0, 260)
+pen.write("Player 1: 0  Player 2: 0", align ="center", font=("Courier", 24, "normal"))
+
 hud = turtle.Turtle()
 hud.speed(0)
 hud.shape("square")
@@ -116,12 +124,14 @@ while True:
             ball.ycor() > paddle_1.ycor() - 40:
         ball.dx *= -1
         collision()
+        pen.write("Player 1: {}  Player 2: {}".format(score_1, score_2), align ="center", font=("Courier", 24, "normal"))
 
     if ball.xcor() > 340 and paddle_2.ycor() + 40 > \
             ball.ycor() > paddle_2.ycor() - 40:
         ball.dx *= -1
         collision()
-
+        pen.write("Player 1: {}  Player 2: {}".format(score_1, score_2), align ="center", font=("Courier", 24, "normal")
+                  
     if ball.xcor() < -390:
         score_2 += 1
         hud.clear()
