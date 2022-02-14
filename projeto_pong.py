@@ -112,13 +112,13 @@ while True:
         ball.dy *= -1
         play()
 
-    if ball.xcor() < -330 and paddle_1.ycor() + 50 > \
-            ball.ycor() > paddle_1.ycor() - 50:
+    if ball.xcor() < -340 and paddle_1.ycor() + 40 > \
+            ball.ycor() > paddle_1.ycor() - 40:
         ball.dx *= -1
         collision()
 
-    if ball.xcor() > 330 and paddle_2.ycor() + 50 > \
-            ball.ycor() > paddle_2.ycor() - 50:
+    if ball.xcor() > 340 and paddle_2.ycor() + 40 > \
+            ball.ycor() > paddle_2.ycor() - 40:
         ball.dx *= -1
         collision()
 
